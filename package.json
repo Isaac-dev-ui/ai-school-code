@@ -1,0 +1,12 @@
+{
+  "name": "ai-code-school",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/runner"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/web",
+    "dev:runner": "npm run dev -w apps/runner"
+  }
+}

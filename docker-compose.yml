@@ -1,0 +1,20 @@
+services:
+  runner:
+    build: ./apps/runner
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - MAX_RUNTIME_MS=2000
+      - MAX_OUTPUT_CHARS=8000
+
+  web:
+    build: ./apps/web
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - RUNNER_URL=http://runner:8080
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - runner
