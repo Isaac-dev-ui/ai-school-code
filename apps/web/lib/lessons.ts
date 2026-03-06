@@ -415,22 +415,22 @@ const LESSON_VIDEOS: Record<string, string> = {
   "linux-processes": "https://www.youtube.com/watch?v=wBp0Rb-ZJak",
   "linux-networking": "https://www.youtube.com/watch?v=wBp0Rb-ZJak",
   
-  // AI Lessons
-  "ai-intro": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "ml-intro": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "supervised-learning": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "unsupervised-learning": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "deep-learning-intro": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "neural-networks": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "tensorflow": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "pytorch": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "nlp": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "computer-vision": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "openai-api": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "langchain": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "rag": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "ai-ethics": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
-  "deploying-ai": "https://www.youtube.com/watch?v=GwFjzwRHg9I",
+  // AI Lessons - Unique tutorials for each topic
+  "ai-intro": "https://www.youtube.com/watch?v=GwFjzwRHg9I", // AI Engineering full course
+  "ml-intro": "https://www.youtube.com/watch?v=i_LwzRVP7bg", // Machine Learning course
+  "supervised-learning": "https://www.youtube.com/watch?v=n_wJ5QD8mVQ", // Supervised Learning
+  "unsupervised-learning": "https://www.youtube.com/watch?v=jc2IIdsyaf8", // Unsupervised Learning
+  "deep-learning-intro": "https://www.youtube.com/watch?v=oYbVFhK_ol0", // Deep Learning intro
+  "neural-networks": "https://www.youtube.com/watch?v=aircAruvnKk", // Neural Networks explained
+  "tensorflow": "https://www.youtube.com/watch?v=hCMB1zDkM88", // TensorFlow course
+  "pytorch": "https://www.youtube.com/watch?v=ormb1VrR34M", // PyTorch tutorial
+  "nlp": "https://www.youtube.com/watch?v=rmVRLe37kl8", // NLP course
+  "computer-vision": "https://www.youtube.com/watch?v=d2XB5-tuCWU", // Computer Vision
+  "openai-api": "https://www.youtube.com/watch?v=fc4R1oUk2IM", // OpenAI API tutorial
+  "langchain": "https://www.youtube.com/watch?v=JU4TWO3DqQQ", // LangChain course
+  "rag": "https://www.youtube.com/watch?v=tdZ-96iNa2Q", // RAG tutorial
+  "ai-ethics": "https://www.youtube.com/watch?v=W9K-9ANsJEk", // AI Ethics tutorial
+  "deploying-ai": "https://www.youtube.com/watch?v=ca04ajFMTqA", // Deploying ML models
 };
 
 export const lessons: Lesson[] = [
