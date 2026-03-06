@@ -117,34 +117,36 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-4">Programming Languages & Technologies</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {[
-            { name: "HTML", color: "bg-orange-500", count: 8 },
-            { name: "CSS", color: "bg-blue-500", count: 5 },
-            { name: "JavaScript", color: "bg-yellow-500", count: 10 },
-            { name: "Python", color: "bg-green-500", count: 11 },
-            { name: "TypeScript", color: "bg-blue-600", count: 3 },
-            { name: "React", color: "bg-cyan-400", count: 3 },
-            { name: "Node.js", color: "bg-green-600", count: 3 },
-            { name: "Django", color: "bg-green-700", count: 3 },
-            { name: "MySQL", color: "bg-orange-600", count: 3 },
-            { name: "MongoDB", color: "bg-green-500", count: 3 },
-            { name: "PostgreSQL", color: "bg-blue-800", count: 3 },
-            { name: "Bootstrap", color: "bg-purple-500", count: 3 },
-            { name: "C", color: "bg-blue-700", count: 3 },
-            { name: "C++", color: "bg-blue-600", count: 3 },
-            { name: "C#", color: "bg-purple-700", count: 3 },
-            { name: "Git", color: "bg-orange-600", count: 3 },
-            { name: "NumPy", color: "bg-blue-500", count: 3 },
-            { name: "Pandas", color: "bg-green-600", count: 3 },
-            { name: "Angular", color: "bg-red-600", count: 3 },
-            { name: "jQuery", color: "bg-blue-400", count: 2 },
-            { name: "XML", color: "bg-orange-500", count: 2 },
-            { name: "Excel", color: "bg-green-500", count: 2 },
-            { name: "DSA", color: "bg-yellow-600", count: 3 },
-            { name: "AngularJS", color: "bg-red-500", count: 2 },
+            { name: "HTML", color: "bg-orange-500", count: 8, filter: "html" },
+            { name: "CSS", color: "bg-blue-500", count: 5, filter: "css" },
+            { name: "JavaScript", color: "bg-yellow-500", count: 10, filter: "javascript" },
+            { name: "Python", color: "bg-green-500", count: 11, filter: "python" },
+            { name: "TypeScript", color: "bg-blue-600", count: 3, filter: "typescript" },
+            { name: "React", color: "bg-cyan-400", count: 3, filter: "react" },
+            { name: "Node.js", color: "bg-green-600", count: 3, filter: "nodejs" },
+            { name: "Django", color: "bg-green-700", count: 3, filter: "django" },
+            { name: "Flask", color: "bg-gray-500", count: 3, filter: "flask" },
+            { name: "MySQL", color: "bg-orange-600", count: 3, filter: "mysql" },
+            { name: "MongoDB", color: "bg-green-500", count: 3, filter: "mongodb" },
+            { name: "PostgreSQL", color: "bg-blue-800", count: 3, filter: "postgresql" },
+            { name: "Bootstrap", color: "bg-purple-500", count: 3, filter: "bootstrap" },
+            { name: "AI/ML", color: "bg-pink-500", count: 15, filter: "ai" },
+            { name: "C", color: "bg-blue-700", count: 3, filter: "c" },
+            { name: "C++", color: "bg-blue-600", count: 3, filter: "cpp" },
+            { name: "C#", color: "bg-purple-700", count: 3, filter: "csharp" },
+            { name: "Git", color: "bg-orange-600", count: 3, filter: "git" },
+            { name: "Docker", color: "bg-blue-400", count: 3, filter: "docker" },
+            { name: "AWS", color: "bg-yellow-600", count: 3, filter: "aws" },
+            { name: "Linux", color: "bg-yellow-700", count: 3, filter: "linux" },
+            { name: "Ruby", color: "bg-red-600", count: 3, filter: "ruby" },
+            { name: "Java", color: "bg-red-500", count: 3, filter: "java" },
+            { name: "PHP", color: "bg-purple-600", count: 3, filter: "php" },
+            { name: "Go", color: "bg-cyan-500", count: 3, filter: "go" },
+            { name: "Rust", color: "bg-orange-700", count: 3, filter: "rust" },
           ].map((lang) => (
             <Link
               key={lang.name}
-              href={`/courses?filter=${lang.name.toLowerCase()}`}
+              href={`/courses?filter=${lang.filter}`}
               className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-500 hover:bg-neutral-800 transition flex items-center gap-3 group"
             >
               <div className={`w-3 h-3 rounded-full ${lang.color}`}></div>

@@ -83,6 +83,8 @@ export default function Courses() {
           </optgroup>
           <optgroup label="AI & Data Science">
             <option value="ai">AI/ML</option>
+            <option value="numpy">NumPy</option>
+            <option value="pandas">Pandas</option>
           </optgroup>
         </select>
       </div>
