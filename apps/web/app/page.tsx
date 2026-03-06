@@ -1,40 +1,80 @@
 import Link from "next/link";
+import { lessons, listLanguages, Lesson } from "../lib/lessons";
 
 export default function Home() {
+  // Calculate dynamic stats
+  const totalLessons = lessons.length;
+  const totalLanguages = listLanguages().length;
+  const lessonsWithVideos = lessons.filter((l: Lesson) => l.videoUrl).length;
+  
+  // Get unique technologies for the grid
+  const techs = [
+    { name: "HTML", color: "bg-orange-500", count: lessons.filter((l: Lesson) => l.language === "html").length },
+    { name: "CSS", color: "bg-blue-500", count: lessons.filter((l: Lesson) => l.language === "css").length },
+    { name: "JavaScript", color: "bg-yellow-500", count: lessons.filter((l: Lesson) => l.language === "javascript").length },
+    { name: "Python", color: "bg-green-500", count: lessons.filter((l: Lesson) => l.language === "python").length },
+    { name: "TypeScript", color: "bg-blue-600", count: lessons.filter((l: Lesson) => l.language === "typescript").length },
+    { name: "React", color: "bg-cyan-400", count: lessons.filter((l: Lesson) => l.language === "react").length },
+    { name: "Node.js", color: "bg-green-600", count: lessons.filter((l: Lesson) => l.language === "nodejs").length },
+    { name: "Django", color: "bg-green-700", count: lessons.filter((l: Lesson) => l.language === "django").length },
+    { name: "Flask", color: "bg-gray-500", count: lessons.filter((l: Lesson) => l.language === "flask").length },
+    { name: "MySQL", color: "bg-orange-600", count: lessons.filter((l: Lesson) => l.language === "mysql").length },
+    { name: "MongoDB", color: "bg-green-500", count: lessons.filter((l: Lesson) => l.language === "mongodb").length },
+    { name: "PostgreSQL", color: "bg-blue-800", count: lessons.filter((l: Lesson) => l.language === "postgresql").length },
+    { name: "Bootstrap", color: "bg-purple-500", count: lessons.filter((l: Lesson) => l.language === "bootstrap").length },
+    { name: "jQuery", color: "bg-blue-400", count: lessons.filter((l: Lesson) => l.language === "jquery").length },
+    { name: "Java", color: "bg-red-500", count: lessons.filter((l: Lesson) => l.language === "java").length },
+    { name: "PHP", color: "bg-purple-600", count: lessons.filter((l: Lesson) => l.language === "php").length },
+    { name: "C", color: "bg-blue-700", count: lessons.filter((l: Lesson) => l.language === "c").length },
+    { name: "C++", color: "bg-blue-600", count: lessons.filter((l: Lesson) => l.language === "cpp").length },
+    { name: "Ruby", color: "bg-red-600", count: lessons.filter((l: Lesson) => l.language === "ruby").length },
+    { name: "Go", color: "bg-cyan-500", count: lessons.filter((l: Lesson) => l.language === "go").length },
+    { name: "Rust", color: "bg-orange-700", count: lessons.filter((l: Lesson) => l.language === "rust").length },
+    { name: "Git", color: "bg-orange-600", count: lessons.filter((l: Lesson) => l.language === "git").length },
+    { name: "Docker", color: "bg-blue-400", count: lessons.filter((l: Lesson) => l.language === "docker").length },
+    { name: "AWS", color: "bg-yellow-600", count: lessons.filter((l: Lesson) => l.language === "aws").length },
+    { name: "Linux", color: "bg-yellow-700", count: lessons.filter((l: Lesson) => l.language === "linux").length },
+    { name: "AI/ML", color: "bg-pink-500", count: lessons.filter((l: Lesson) => l.language === "ai").length },
+  ].filter(t => t.count > 0).sort((a, b) => b.count - a.count);
+
   return (
     <section className="mt-8">
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 border border-neutral-700 p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight relative z-10">
-          Learn to code. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Build projects.</span> Get paid.
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight relative z-10">
+          Learn to code. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Build projects.</span> Get paid.
         </h1>
         <p className="mt-4 text-neutral-300 text-lg max-w-2xl relative z-10">
-          A comprehensive coding platform with interactive lessons, video tutorials, Isack AI tutor, and Isack AI assistant!
+          🚀 Master programming with interactive lessons, {lessonsWithVideos}+ video tutorials, Isack AI tutor, and AI assistant! Start your coding journey today.
         </p>
-        <div className="mt-6 flex gap-3 flex-wrap relative z-10">
-          <Link className="px-6 py-3 rounded-2xl bg-white text-black font-semibold hover:bg-neutral-200 transition flex items-center gap-2" href="/courses">
+        <div className="mt-8 flex gap-3 flex-wrap relative z-10">
+          <Link className="px-6 py-3 rounded-2xl bg-white text-black font-semibold hover:bg-neutral-200 transition flex items-center gap-2 transform hover:scale-105" href="/courses">
             📚 Browse All Courses
           </Link>
-          <Link className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 font-semibold hover:opacity-90 transition flex items-center gap-2" href="/isaac">
+          <Link className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 font-semibold hover:opacity-90 transition flex items-center gap-2 transform hover:scale-105" href="/isaac">
             🤖 Ask Isack AI
           </Link>
-          <Link className="px-6 py-3 rounded-2xl bg-neutral-700 font-semibold hover:bg-neutral-600 transition flex items-center gap-2" href="/earn">
+          <Link className="px-6 py-3 rounded-2xl bg-neutral-700 font-semibold hover:bg-neutral-600 transition flex items-center gap-2 transform hover:scale-105" href="/earn">
             💰 Earn Roadmap
           </Link>
         </div>
       </div>
 
-      {/* Stats */}
+      {/* Dynamic Stats */}
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Lessons", value: "50+", icon: "📚" },
-          { label: "Topics", value: "24+", icon: "🎯" },
-          { label: "Isack AI Features", value: "3", icon: "🤖" },
-          { label: "Video Tutorials", value: "30+", icon: "🎬" },
+          { label: "Lessons", value: totalLessons.toString(), icon: "📚", color: "from-blue-500 to-cyan-500" },
+          { label: "Technologies", value: totalLanguages.toString(), icon: "🎯", color: "from-purple-500 to-pink-500" },
+          { label: "AI Features", value: "3", icon: "🤖", color: "from-green-500 to-emerald-500" },
+          { label: "Video Tutorials", value: lessonsWithVideos.toString(), icon: "🎬", color: "from-orange-500 to-red-500" },
         ].map((stat) => (
-          <div key={stat.label} className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 text-center">
-            <div className="text-2xl mb-1">{stat.icon}</div>
-            <div className="text-2xl font-bold">{stat.value}</div>
+          <div key={stat.label} className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 text-center transform hover:scale-105 transition-transform">
+            <div className={`text-3xl mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>{stat.icon}</div>
+            <div className="text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent">{stat.value}</div>
             <div className="text-sm text-neutral-500">{stat.label}</div>
           </div>
         ))}

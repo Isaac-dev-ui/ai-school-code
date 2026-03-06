@@ -48,35 +48,41 @@ export default function Courses() {
             <option value="javascript">JavaScript</option>
             <option value="typescript">TypeScript</option>
           </optgroup>
+          <optgroup label="Frontend Frameworks">
+            <option value="react">React</option>
+            <option value="jquery">jQuery</option>
+            <option value="bootstrap">Bootstrap</option>
+          </optgroup>
           <optgroup label="Backend">
             <option value="python">Python</option>
             <option value="php">PHP</option>
             <option value="nodejs">Node.js</option>
             <option value="go">Go</option>
+            <option value="ruby">Ruby</option>
+            <option value="java">Java</option>
           </optgroup>
-          <optgroup label="Mobile">
-            <option value="swift">Swift</option>
-            <option value="kotlin">Kotlin</option>
+          <optgroup label="Python Frameworks">
+            <option value="django">Django</option>
+            <option value="flask">Flask</option>
+          </optgroup>
+          <optgroup label="Databases">
+            <option value="mysql">MySQL</option>
+            <option value="postgresql">PostgreSQL</option>
+            <option value="mongodb">MongoDB</option>
           </optgroup>
           <optgroup label="Systems">
+            <option value="c">C</option>
             <option value="cpp">C++</option>
             <option value="rust">Rust</option>
           </optgroup>
-          <optgroup label="Data">
-            <option value="r">R</option>
-            <option value="sql">SQL</option>
-          </optgroup>
-          <optgroup label="Frameworks">
-            <option value="react">React</option>
-            <option value="jquery">jQuery</option>
-            <option value="bootstrap">Bootstrap</option>
-          </optgroup>
-          <optgroup label="Data Formats">
-            <option value="json">JSON</option>
-            <option value="xml">XML</option>
-          </optgroup>
           <optgroup label="DevOps">
             <option value="docker">Docker</option>
+            <option value="git">Git</option>
+            <option value="linux">Linux</option>
+            <option value="aws">AWS</option>
+          </optgroup>
+          <optgroup label="AI & Data Science">
+            <option value="ai">AI/ML</option>
           </optgroup>
         </select>
       </div>
@@ -99,7 +105,8 @@ export default function Courses() {
                 lang === "swift" ? "bg-orange-400" :
                 lang === "kotlin" ? "bg-purple-500" :
                 lang === "cpp" ? "bg-blue-700" :
-                lang === "rust" ? "bg-red-500" :
+                lang === "c" ? "bg-gray-600" :
+                lang === "rust" ? "bg-orange-700" :
                 lang === "r" ? "bg-gray-400" :
                 lang === "sql" ? "bg-blue-400" :
                 lang === "php" ? "bg-purple-600" :
@@ -108,10 +115,21 @@ export default function Courses() {
                 lang === "typescript" ? "bg-blue-600" :
                 lang === "go" ? "bg-cyan-500" :
                 lang === "docker" ? "bg-blue-400" :
+                lang === "git" ? "bg-orange-600" :
+                lang === "linux" ? "bg-yellow-700" :
+                lang === "aws" ? "bg-yellow-600" :
                 lang === "jquery" ? "bg-blue-300" :
                 lang === "bootstrap" ? "bg-purple-400" :
                 lang === "json" ? "bg-yellow-400" :
                 lang === "xml" ? "bg-orange-400" :
+                lang === "django" ? "bg-green-700" :
+                lang === "flask" ? "bg-gray-500" :
+                lang === "mysql" ? "bg-orange-600" :
+                lang === "postgresql" ? "bg-blue-800" :
+                lang === "mongodb" ? "bg-green-500" :
+                lang === "ruby" ? "bg-red-600" :
+                lang === "java" ? "bg-red-500" :
+                lang === "ai" ? "bg-pink-500" :
                 "bg-neutral-500"
               }`}></span>
               {lang}
